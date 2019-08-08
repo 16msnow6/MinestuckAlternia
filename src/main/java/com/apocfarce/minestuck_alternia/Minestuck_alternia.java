@@ -6,11 +6,15 @@ import org.apache.logging.log4j.Logger;
 
 import main.java.com.apocfarce.minestuck_alternia.Item.AlterniaItems;
 import main.java.com.apocfarce.minestuck_alternia.block.AlterniaBlocks;
+import main.java.com.apocfarce.minestuck_alternia.world.AlterniaDimensionsHandeler;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.world.dimension.DimensionType;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.world.RegisterDimensionsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -70,19 +74,34 @@ public class Minestuck_alternia {
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
+    
+
+	@Mod.EventBusSubscriber(modid = "minestuck_alternia", bus=Mod.EventBusSubscriber.Bus.FORGE)
+	public static class ForgeRegistryEvents{
+        @SubscribeEvent
+    	public static void registerDimensionTypes(final RegisterDimensionsEvent event) {
+        	LOGGER.info("HELLO from Register DimensionType");
+        	AlterniaDimensionsHandeler.registerDimensionTypes();
+        }
+	}
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
             LOGGER.info("HELLO from Register Block");
-            AlterniaBlocks.registerBlocks();
-            AlterniaItems.registerItems(); 
+            AlterniaBlocks.registerBlocks(blockRegistryEvent);
         } 
-        public static void onItemRegistry() {
-            // register a new block here
+        @SubscribeEvent
+        public static void onItemRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
             LOGGER.info("HELLO from Register Item");
- //           AlterniaItems.registerItems(); 
+            AlterniaItems.registerItems(itemRegistryEvent); 
+        }
+        @SubscribeEvent
+        public static void onDimensionRegistry(final RegistryEvent.Register<ModDimension> dimensionRegistryEvent) {
+            LOGGER.info("HELLO from Register Dimension");
+        	AlterniaDimensionsHandeler.registerDimensions(dimensionRegistryEvent);
+        	AlterniaDimensionsHandeler.registerDimensionTypes();
         }
     }
 

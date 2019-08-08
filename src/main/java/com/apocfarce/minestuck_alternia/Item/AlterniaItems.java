@@ -10,6 +10,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.IRegistry;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
@@ -28,35 +29,36 @@ public class AlterniaItems
 	
 	
 	
-	public static void registerItems()
+	public static void registerItems(Register<Item> event)
 	{
 		//get the registry
+		IForgeRegistry<Item> registry = event.getRegistry();
 		/**-----------------------------------
 		 * items
 		 *-------------------------------------*/
 		//items
-		ExampleItem=register("minestuck_alternia:example_item",new ExampleItem(new Item.Properties().group(ItemGroupAlternia.instance)));
+		ExampleItem=register(registry,"minestuck_alternia:example_item",new ExampleItem(new Item.Properties().group(ItemGroupAlternia.instance)));
 		//food
-		register("minestuck_alternia:oblong_meat_product",new ItemFood(6, 3, true, new Item.Properties().group(ItemGroupAlternia.instance)));
+		register(registry,"minestuck_alternia:oblong_meat_product",new ItemFood(6, 3, true, new Item.Properties().group(ItemGroupAlternia.instance)));
 		//blood colored items
 		bloodPotions=new Item[ENUM_BLOOD_COLOR.values().length];
 		for(int i=0;i<bloodPotions.length;i++) {
 			if(i!=ENUM_BLOOD_COLOR.GREY.ordinal()) {
-				bloodPotions[i]=register("minestuck_alternia:blood_bottle_"+ENUM_BLOOD_COLOR.values()[i].name().toLowerCase(),new BloodBottle(new Item.Properties().group(ItemGroupAlternia.instance).maxStackSize(1),ENUM_BLOOD_COLOR.values()[i]));
+				bloodPotions[i]=register(registry,"minestuck_alternia:blood_bottle_"+ENUM_BLOOD_COLOR.values()[i].name().toLowerCase(),new BloodBottle(new Item.Properties().group(ItemGroupAlternia.instance).maxStackSize(1),ENUM_BLOOD_COLOR.values()[i]));
 			}
 		}
 		
 		/**-----------------------------------
 		 *blocks
 		 -------------------------------------*/
-		register(AlterniaBlocks.darkCobble,ItemGroupAlternia.instance);
-		register(AlterniaBlocks.darkStone,ItemGroupAlternia.instance);
-		register(AlterniaBlocks.redCobble,ItemGroupAlternia.instance);
-		register(AlterniaBlocks.redRock,ItemGroupAlternia.instance);
-		register(AlterniaBlocks.block,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.darkCobble,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.darkStone,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.redCobble,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.redRock,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.block,ItemGroupAlternia.instance);
 		for(int i=0;i<AlterniaBlocks.hiveGlass.length;i++) {
 			if(i!= ENUM_BLOOD_COLOR.MUTANT.ordinal()) {
-				register(AlterniaBlocks.hiveGlass[i],ItemGroupAlternia.instance);
+				register(registry,AlterniaBlocks.hiveGlass[i],ItemGroupAlternia.instance);
 			}
 		}
 	}
@@ -68,31 +70,32 @@ public class AlterniaItems
 	   /*------------------------------------------
 	    * coppied from net.minecraft.item.Item
 	    --------------------------------------------*/
-	   private static Item register(Block blockIn) {
-	      return register(new ItemBlock(blockIn, new Item.Properties()));
+	   private static Item register(IForgeRegistry<Item> registry,Block blockIn) {
+	      return register(registry,new ItemBlock(blockIn, new Item.Properties()));
 	   }
 
-	   private static Item register(Block blockIn, ItemGroup group) {
-	      return register(new ItemBlock(blockIn, (new Item.Properties()).group(group)));
+	   private static Item register(IForgeRegistry<Item> registry,Block blockIn, ItemGroup group) {
+	      return register(registry,new ItemBlock(blockIn, (new Item.Properties()).group(group)));
 	   }
 
-	   private static Item register(ItemBlock itemBlockIn) {
-	      return register(itemBlockIn.getBlock(), itemBlockIn);
+	   private static Item register(IForgeRegistry<Item> registry,ItemBlock itemBlockIn) {
+	      return register(registry,itemBlockIn.getBlock(), itemBlockIn);
 	   }
 
-	   protected static Item register(Block blockIn, Item itemIn) {
-	      return register(IRegistry.field_212618_g.getKey(blockIn), itemIn);
+	   protected static Item register(IForgeRegistry<Item> registry,Block blockIn, Item itemIn) {
+	      return register(registry,blockIn.getRegistryName(), itemIn);
 	   }
 
-	   private static Item register(String id, Item itemIn) {
-	      return register(new ResourceLocation(id), itemIn);
+	   private static Item register(IForgeRegistry<Item> registry,String id, Item itemIn) {
+	      return register(registry,new ResourceLocation(id), itemIn);
 	   }
 
-	   private static Item register(ResourceLocation resourceLocationIn, Item itemIn) {
+	   private static Item register(IForgeRegistry<Item> registry,ResourceLocation key, Item itemIn) {
 	      if (itemIn instanceof ItemBlock) {
 	         ((ItemBlock)itemIn).addToBlockToItemMap( net.minecraftforge.registries.GameData.getBlockItemMap(), itemIn);
 	      }
-	      IRegistry.field_212630_s.put(resourceLocationIn, itemIn);
+	      registry.register(itemIn.setRegistryName(key));
+	      //IRegistry.field_212630_s.put(resourceLocationIn, itemIn);
 	      return(itemIn);
 	   }
 }
