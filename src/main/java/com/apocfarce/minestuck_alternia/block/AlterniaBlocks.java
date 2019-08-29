@@ -1,5 +1,7 @@
 package main.java.com.apocfarce.minestuck_alternia.block;
 
+import main.java.com.apocfarce.minestuck_alternia.Minestuck_alternia;
+
 import main.java.com.apocfarce.minestuck_alternia.Item.ENUM_BLOOD_COLOR;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -23,22 +25,23 @@ public class AlterniaBlocks
 	
 	public static void registerBlocks(Register<Block> event)
 	{
+		String modid = Minestuck_alternia.MODID;
 		IForgeRegistry<Block> registry = event.getRegistry();
 		
 		//blood colored blocks
 		hiveGlass=new Block[ENUM_BLOOD_COLOR.values().length];
 		for(int i=0;i<hiveGlass.length;i++) {
 			if(i!=ENUM_BLOOD_COLOR.MUTANT.ordinal()) {
-				hiveGlass[i]=register(registry,"minestuck_alternia:hiveglass_"+ENUM_BLOOD_COLOR.values()[i].name().toLowerCase(), new HiveGlass(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS), ENUM_BLOOD_COLOR.values()[i]));
+				hiveGlass[i]=register(registry,modid+":hiveglass_"+ENUM_BLOOD_COLOR.values()[i].name().toLowerCase(), new HiveGlass(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS), ENUM_BLOOD_COLOR.values()[i]));
 			}
 		}
 
 
-		block=register(registry,"minestuck_alternia:block",new ExampleBlock(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
-		darkStone=register(registry,"minestuck_alternia:dark_stone",new DarkStone(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
-		darkCobble=register(registry,"minestuck_alternia:dark_cobble",new DarkCobble(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
-		redRock=register(registry,"minestuck_alternia:red_rock",new RedRock(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
-		redCobble=register(registry,"minestuck_alternia:red_cobble",new RedCobble(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
+		block=register(registry,modid+":block",new ExampleBlock(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
+		darkStone=register(registry,modid+":dark_stone",new DarkStone(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
+		darkCobble=register(registry,modid+":dark_cobble",new DarkCobble(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
+		redRock=register(registry,modid+":red_rock",new RedRock(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
+		redCobble=register(registry,modid+":red_cobble",new RedCobble(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1.5F, 10.0F)));
 
 	}
 	

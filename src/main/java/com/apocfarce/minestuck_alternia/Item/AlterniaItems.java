@@ -1,5 +1,6 @@
 package main.java.com.apocfarce.minestuck_alternia.Item;
 
+import main.java.com.apocfarce.minestuck_alternia.Minestuck_alternia;
 import main.java.com.apocfarce.minestuck_alternia.block.AlterniaBlocks;
 import net.minecraft.block.Block;
 
@@ -33,18 +34,20 @@ public class AlterniaItems
 	{
 		//get the registry
 		IForgeRegistry<Item> registry = event.getRegistry();
+		
+		String modid = Minestuck_alternia.MODID;
 		/**-----------------------------------
 		 * items
 		 *-------------------------------------*/
 		//items
-		ExampleItem=register(registry,"minestuck_alternia:example_item",new ExampleItem(new Item.Properties().group(ItemGroupAlternia.instance)));
+		ExampleItem=register(registry,modid+":example_item",new ExampleItem(new Item.Properties().group(ItemGroupAlternia.instance)));
 		//food
-		register(registry,"minestuck_alternia:oblong_meat_product",new ItemFood(6, 3, true, new Item.Properties().group(ItemGroupAlternia.instance)));
+		register(registry,modid+":oblong_meat_product",new ItemFood(6, 3, true, new Item.Properties().group(ItemGroupAlternia.instance)));
 		//blood colored items
 		bloodPotions=new Item[ENUM_BLOOD_COLOR.values().length];
 		for(int i=0;i<bloodPotions.length;i++) {
 			if(i!=ENUM_BLOOD_COLOR.GREY.ordinal()) {
-				bloodPotions[i]=register(registry,"minestuck_alternia:blood_bottle_"+ENUM_BLOOD_COLOR.values()[i].name().toLowerCase(),new BloodBottle(new Item.Properties().group(ItemGroupAlternia.instance).maxStackSize(1),ENUM_BLOOD_COLOR.values()[i]));
+				bloodPotions[i]=register(registry,modid+":blood_bottle_"+ENUM_BLOOD_COLOR.values()[i].name().toLowerCase(),new BloodBottle(new Item.Properties().group(ItemGroupAlternia.instance).maxStackSize(1),ENUM_BLOOD_COLOR.values()[i]));
 			}
 		}
 		
