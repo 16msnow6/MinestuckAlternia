@@ -8,7 +8,7 @@ modLoader="javafml" #mandatory
 # A version range to match for said mod loader - for regular FML @Mod it will be the forge version
 loaderVersion="[25,)" #mandatory (24 is current forge version)
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL="http://my.issue.tracker/" #optional
+#issueTrackerURL="http://my.issue.tracker/" #optional
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
@@ -19,19 +19,19 @@ version="${file.jarVersion}" #mandatory
 displayName="Alternia" #mandatory
 
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="http://myurl.me/" #optional
+#updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="http://example.com/" #optional
+#displayURL="http://example.com/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="AlterniaMod.png" #optional
 # A text field displayed in the mod UI
-credits="This Mod has been created by Discord Users: JackNior#1998, and Cealvan#4614. textures by FarlandsExilee#1977, and Celeri#9718:" #optional
+credits="This Mod has been created by Discord Users: JackNior#1998, and Cealvan#4614. textures by FarlandsExilee#1977, God_Of_My_Truth#8860, and Celeri#9718" #optional
 # A text field displayed in the mod UI
-authors="Jack, Cealvan (Sarah?)" #optional
+authors="Jack, Cealvan" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
 This mod alows the player to explore the great world of alternia, meet trolls, have their own hive etc...
-This mod is not Minestuck, nor a minestuck addon, for stuff in homestuck that is not from alternia get Minestuck
+This mod is not Minestuck, nor a minestuck addon,instead, this mod is for adding the alternia world
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.minestuck_alternia]] #optional

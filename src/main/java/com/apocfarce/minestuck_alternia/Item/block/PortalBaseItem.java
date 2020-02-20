@@ -12,6 +12,7 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class PortalBaseItem extends MultiBlockItem
@@ -29,6 +30,7 @@ public class PortalBaseItem extends MultiBlockItem
 		for(int x=0;x<=3;x++) {
 				for(int z=0;z<=3;z++) {
 					if(!context.getWorld().getBlockState(context.getPos().offset(facing, x).up(0).offset(facing.rotateY(),z)).isReplaceable(context)) {
+						context.getPlayer().sendStatusMessage(new TranslationTextComponent("message.cant_place.portal_base"), true);
 						return false;
 					}
 				}

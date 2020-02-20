@@ -44,7 +44,11 @@
 	"item.minestuck_alternia.cherub_key": "Cherub Key",
 	
 	
-	"itemGroup.alternia":"Minestuck Alternia"
+	"itemGroup.alternia":"Minestuck Alternia",
+		
+	"message.cant_place.portal_center":"You must place the crown before placing the center",
+	"message.cant_place.portal_crown":"You must place both of the snakes before placing the crown"
+	"message.cant_place.portal_base":"not enough room to place this(needs a 4x4 space)"
 
 	
 }

@@ -13,6 +13,9 @@ import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class PortalCrownItem extends MultiBlockItem
@@ -35,7 +38,8 @@ public class PortalCrownItem extends MultiBlockItem
 					&&portal.hasPart(Portal.PortalPart.RED_SNAKE,worldIn,mainCorner)) {
 					return true;
 				}
-				//display("you need to construct the snakes before constructing the crown")
+
+				context.getPlayer().sendStatusMessage(new TranslationTextComponent("message.cant_place.portal_crown"), true);
 			}
 		}
 		return false;

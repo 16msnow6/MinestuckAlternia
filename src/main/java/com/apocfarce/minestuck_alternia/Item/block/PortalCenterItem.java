@@ -15,6 +15,8 @@ import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class PortalCenterItem extends MultiBlockItem
@@ -38,7 +40,7 @@ public class PortalCenterItem extends MultiBlockItem
 					&&portal.hasPart(Portal.PortalPart.CROWN, worldIn, mainCorner)) {
 					return true;
 				}
-				//display("This needs to be the last part placed")
+				context.getPlayer().sendStatusMessage(new TranslationTextComponent("message.cant_place.portal_center"), true);
 			}
 		}
 		return false;
