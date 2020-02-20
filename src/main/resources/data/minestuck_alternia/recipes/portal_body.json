@@ -11,12 +11,12 @@
     },
     "D": {
       "item": "minecraft:diamond"
-    }
+    },
     "O": {
         "item": "minecraft:obsidian"
       }
-  }
+  },
   "result": {
-    "item": "minestuck_alternia:portal_body",
+    "item": "minestuck_alternia:portal_center"
   }
 }

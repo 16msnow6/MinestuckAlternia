@@ -149,13 +149,22 @@ public class PortalCenter extends Portal{
 			}
 		}
 	}
-	public static void teliport(ServerWorld from, ServerWorld to, BlockPos SpawnPos,ServerPlayerEntity player) {
-		from.getChunkProvider().func_217228_a(TicketType.POST_TELEPORT, new ChunkPos(SpawnPos), 1, player.getEntityId());
+	public static void teliport(ServerWorld from, ServerWorld to, BlockPos spawnPos,ServerPlayerEntity player) {
+		from.getChunkProvider().func_217228_a(TicketType.POST_TELEPORT, new ChunkPos(spawnPos), 1, player.getEntityId());
+		while(to.isAirBlock(spawnPos)){
+			spawnPos=spawnPos.down();
+		}
+		while(!to.canBlockSeeSky(spawnPos)) {
+			spawnPos=spawnPos.up();
+		}
+		spawnPos=spawnPos.up();
+		
 		if(player.isSleeping()) {
 			player.wakeUpPlayer(true, true, false);
 		}
 		player.stopRiding();
-		player.teleport(to, SpawnPos.getX(), SpawnPos.getY(), SpawnPos.getZ(), player.rotationYaw, player.rotationPitch);
+		
+		player.teleport(to, spawnPos.getX(), spawnPos.getY(), spawnPos.getZ(), player.rotationYaw, player.rotationPitch);
 
 	}
 	public VoxelShape getCollisionShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

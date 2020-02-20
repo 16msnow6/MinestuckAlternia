@@ -6,7 +6,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class ItemGroupAlternia extends ItemGroup{
-	public static final ItemGroupAlternia instance = new ItemGroupAlternia("Alternia");
+	public static final ItemGroupAlternia instance = new ItemGroupAlternia("alternia");
 	
 	
 	public ItemGroupAlternia(String label) {

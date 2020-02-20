@@ -10,13 +10,12 @@
     },
     "D": {
       "item": "minecraft:diamond"
-    }
+    },
     "O": {
         "item": "minecraft:obsidian"
       }
-  }
+  },
   "result": {
-    "item": "minestuck_alternia:portal_base",
-    "count":
+    "item": "minestuck_alternia:portal_crown"
   }
 }

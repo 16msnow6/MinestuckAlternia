@@ -3,8 +3,8 @@
   "group": "cherub_key",
   "pattern": [
     "  E",
-    "ER ",
-    "GE "
+    "EG ",
+    "RE "
   ],
   "key": {
     "E": {

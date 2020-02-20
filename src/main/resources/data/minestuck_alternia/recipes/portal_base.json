@@ -8,9 +8,9 @@
     "I": {
       "item": "minecraft:iron_block"
     }
-  }
+  },
   "result": {
-    "item": "minestuck_alternia:portal_base",
+    "item": "minestuck_alternia:portal_base"
 
   }
 }
