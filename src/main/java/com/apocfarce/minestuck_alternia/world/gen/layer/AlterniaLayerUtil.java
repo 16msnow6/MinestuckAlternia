@@ -35,8 +35,11 @@ public class AlterniaLayerUtil extends LayerUtil {
       
 		//add biomes
 		iareafactory = (new AlterniaBiomeLayer(worldTypeIn, settings)).apply(contextFactory.apply(200L), iareafactory);
-		iareafactory = EdgeBiomeLayer.INSTANCE.apply(contextFactory.apply(1000L), iareafactory);
-//		iareafactory = AlterniaEdgeBiomeLayer.INSTANCE.apply(contextFactory.apply(1000), iareafactory);
+
+		iareafactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), iareafactory);
+		iareafactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), iareafactory);
+		
+		iareafactory = AlterniaEdgeBiomeLayer.INSTANCE.apply(contextFactory.apply(1000), iareafactory);
 		IAreaFactory<T> lvt_8_1_= iareafactory;
 		
 

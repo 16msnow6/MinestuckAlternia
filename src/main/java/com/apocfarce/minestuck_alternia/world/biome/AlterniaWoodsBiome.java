@@ -11,7 +11,14 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public final class AlterniaWoodsBiome extends Biome {
    public AlterniaWoodsBiome() {
-      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.JUNGLE).depth(0.1F).scale(0.2F).temperature(0.95F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent((String)null));
+      super((new Biome.Builder())
+    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
+    		  .precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F)
+    		  .temperature(0.95F)
+    		  .downfall(0.8F)
+    		  .waterColor(4159204)
+    		  .waterFogColor(329011)
+    		  .parent((String)null));
       this.addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
       this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
       DefaultBiomeFeatures.addCarvers(this);
@@ -37,6 +44,6 @@ public final class AlterniaWoodsBiome extends Biome {
 	}
 	@Override
 	public int getGrassColor(BlockPos pos) {
-		return(0xFF4455);
+		return(0x004433);
 	}
 }

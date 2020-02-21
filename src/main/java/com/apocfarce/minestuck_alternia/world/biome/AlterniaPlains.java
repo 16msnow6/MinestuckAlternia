@@ -44,7 +44,7 @@ public final class AlterniaPlains extends Biome {
   }
 	@Override
 	public int getFoliageColor(BlockPos pos) {
-		return(0x115533);
+		return(0x9955DD);
 	}
 	@Override
 	public int getGrassColor(BlockPos pos) {

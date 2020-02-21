@@ -13,6 +13,8 @@ public class AlterniaBiomeHandeler {
 	public static Biome AlterniaDeepForest;
 	public static Biome AlterniaWoods;
 	public static Biome AlterniaPlains;
+	
+	
 	public static void RegisterBiomes(Register<Biome> event) {
 		IForgeRegistry<Biome> registry = event.getRegistry();
 		AlterniaTest =register(registry,new ResourceLocation("minestuck_alternia:alternia_test"), new AlterniaTestBiome(),BiomeType.WARM,10);
