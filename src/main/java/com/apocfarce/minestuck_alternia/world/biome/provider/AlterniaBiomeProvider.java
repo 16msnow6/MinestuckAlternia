@@ -46,8 +46,8 @@ public class AlterniaBiomeProvider extends BiomeProvider {
 	}
    
 	public static void AddVanillaBiomes(){
-		biomes[BiomeType.WARM.ordinal()].add(new BiomeEntry(Biomes.BAMBOO_JUNGLE,10));
-		biomes[BiomeType.COOL.ordinal()].add(new BiomeEntry(Biomes.SWAMP,10));
+//		biomes[BiomeType.WARM.ordinal()].add(new BiomeEntry(Biomes.BAMBOO_JUNGLE,10));
+//		biomes[BiomeType.COOL.ordinal()].add(new BiomeEntry(Biomes.SWAMP,10));
 		biomes[BiomeType.ICY.ordinal()].add(new BiomeEntry(Biomes.ICE_SPIKES,10));
 		biomes[BiomeType.DESERT.ordinal()].add(new BiomeEntry(Biomes.BADLANDS,10));
 	}	

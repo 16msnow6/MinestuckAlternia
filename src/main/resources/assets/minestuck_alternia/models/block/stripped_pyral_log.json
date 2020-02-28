@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+		"side": "minestuck_alternia:blocks/stripped_pyral_log",
+		"end": "minestuck_alternia:blocks/pyral_log_top"
+	}
+}

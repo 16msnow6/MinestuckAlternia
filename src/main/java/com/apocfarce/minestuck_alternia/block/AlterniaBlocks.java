@@ -1,10 +1,16 @@
 package com.apocfarce.minestuck_alternia.block;
 
 import com.apocfarce.minestuck_alternia.Item.ENUM_BLOOD_COLOR;
+import com.google.common.collect.Maps;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.LogBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.AxeItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -22,6 +28,41 @@ public class AlterniaBlocks
 	public static Block portalCrown;
 	public static Block redSnake;
 	public static Block greenSnake;
+	//wood stuff
+	public static Block pyralSapling;
+	public static Block pyralLeaves;
+	public static Block pyralLog;
+	public static Block strippedPyralLog;
+	public static Block pyralWood;
+	public static Block strippedPyralWood;
+	public static Block pyralPlanks;
+	public static Block pyralStairs;
+	public static Block pyralSlab;
+	public static Block pyralFence;
+	public static Block pyralFenceGate;
+	public static Block pyralDoor;
+	public static Block pyralTrapDoor;
+	public static Block pyralSign;
+	public static Block pyralButton;
+	public static Block pyralPressurePlate;
+	
+	
+	public static Block mirrageSapling;
+	public static Block mirrageLeaves;
+	public static Block mirrageLog;
+	public static Block strippedmirrageLog;
+	public static Block mirrageWood;
+	public static Block strippedmirrageWood;
+	public static Block mirragePlanks;
+	public static Block mirrageStairs;
+	public static Block mirrageSlab;
+	public static Block mirrageFence;
+	public static Block mirrageFenceGate;
+	public static Block mirrageDoor;
+	public static Block mirrageTrapDoor;
+	public static Block mirrageSign;
+	public static Block mirrageButton;
+	public static Block mirragePressurePlate;
 	
 	//BloodColoredBlocks
 	public static Block hiveGlass[];
@@ -49,7 +90,26 @@ public class AlterniaBlocks
 		portalBase =  register(registry,"minestuck_alternia:portal_base",  new PortalBase(Block.Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(5.0F, 6.0F)));
 		redSnake =    register(registry,"minestuck_alternia:red_snake",    new RedSnake(Block.Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(5.0F, 6.0F)));
 		greenSnake =  register(registry,"minestuck_alternia:green_snake",  new GreenSnake(Block.Properties.create(Material.IRON).sound(SoundType.STONE).hardnessAndResistance(5.0F, 6.0F)));
+		
+		//wood
+		pyralLeaves =  register(registry,"minestuck_alternia:pyral_leaves",  new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT).hardnessAndResistance(0.2F).tickRandomly()));
+		strippedPyralLog =  register(registry,"minestuck_alternia:stripped_pyral_log",  new LogBlock(MaterialColor.BLUE,Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		strippedPyralWood =  register(registry,"minestuck_alternia:stripped_pyral_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		pyralLog =  register(registry,"minestuck_alternia:pyral_log",  new AlterniaLogBlock(MaterialColor.BLUE,strippedPyralLog,Block.Properties.create(Material.WOOD,MaterialColor.BLUE).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		pyralWood =  register(registry,"minestuck_alternia:pyral_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		pyralPlanks =  register(registry,"minestuck_alternia:pyral_planks",  new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F,3.0F)));
+		
+		mirrageLeaves =  register(registry,"minestuck_alternia:mirrage_leaves",  new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT).hardnessAndResistance(0.2F).tickRandomly()));
+		strippedmirrageLog =  register(registry,"minestuck_alternia:stripped_mirrage_log",  new LogBlock(MaterialColor.BLUE,Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		strippedmirrageWood =  register(registry,"minestuck_alternia:stripped_mirrage_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		mirrageLog =  register(registry,"minestuck_alternia:mirrage_log",  new AlterniaLogBlock(MaterialColor.BLUE,strippedmirrageLog,Block.Properties.create(Material.WOOD,MaterialColor.BLUE).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		mirrageWood =  register(registry,"minestuck_alternia:mirrage_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		mirragePlanks =  register(registry,"minestuck_alternia:mirrage_planks",  new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F,3.0F)));
+		
+		
 	}
+	
+
 	
 	private static Block register(IForgeRegistry<Block> registry,ResourceLocation key, Block blockIn){
 		registry.register(blockIn.setRegistryName(key));

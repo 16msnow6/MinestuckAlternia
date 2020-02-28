@@ -17,7 +17,7 @@ public class AlterniaBiomeHandeler {
 	
 	public static void RegisterBiomes(Register<Biome> event) {
 		IForgeRegistry<Biome> registry = event.getRegistry();
-		AlterniaTest =register(registry,new ResourceLocation("minestuck_alternia:alternia_test"), new AlterniaTestBiome(),BiomeType.WARM,10);
+//		AlterniaTest =register(registry,new ResourceLocation("minestuck_alternia:alternia_test"), new AlterniaTestBiome(),BiomeType.WARM,10);
 		AlterniaDeepForest = register(registry,new ResourceLocation("minestuck_alternia:alternia_deep_forest"), new AlterniaDeepForestBiome(),BiomeType.WARM,30);
 		AlterniaPlains = register(registry,new ResourceLocation("minestuck_alternia:lternia_plains"), new AlterniaPlains(),BiomeType.COOL,30);
 		AlterniaWoods = registerEdgeBiome(registry,new ResourceLocation("minestuck_alternia:alternia_woods"),new AlterniaWoodsBiome(),AlterniaDeepForest);

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+		"side": "minestuck_alternia:blocks/mirrage_log",
+		"end": "minestuck_alternia:blocks/mirrage_log_top"
+	}
+}

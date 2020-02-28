@@ -3,7 +3,6 @@ package com.apocfarce.minestuck_alternia;
 
 import com.apocfarce.minestuck_alternia.Item.AlterniaItems;
 import com.apocfarce.minestuck_alternia.block.AlterniaBlocks;
-import com.apocfarce.minestuck_alternia.client.render.PortalOutline;
 import com.apocfarce.minestuck_alternia.world.DimensionsHandeler;
 import com.apocfarce.minestuck_alternia.world.biome.AlterniaBiomeHandeler;
 import com.apocfarce.minestuck_alternia.world.biome.provider.AlterniaBioimeProviderHandeler;
@@ -14,7 +13,6 @@ import net.minecraft.item.Item;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProviderType;
 import net.minecraft.world.gen.ChunkGeneratorType;
-import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.event.RegistryEvent;
@@ -58,11 +56,6 @@ public class Minestuck_alternia {
     	public static void registerDimensionTypes(final RegisterDimensionsEvent event) {
         	DimensionsHandeler.registerDimensionTypes();
         }
-        
-    	@SubscribeEvent
-    	public static void renderWorld(RenderWorldLastEvent event){
-    		PortalOutline.renderWorld(event);
-    	}
 	}
 
 

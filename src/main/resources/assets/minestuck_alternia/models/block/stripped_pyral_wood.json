@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "minestuck_alternia:blocks/stripped_pyral_log"
+	}
+}
