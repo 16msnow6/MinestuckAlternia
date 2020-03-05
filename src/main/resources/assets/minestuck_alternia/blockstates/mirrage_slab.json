@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "minestuck_alternia:block/mirrage_slab" },
+        "type=top": { "model": "minestuck_alternia:block/mirrage_slab_top" },
+        "type=double": { "model": "minestuck_alternia:block/mirrage_planks" }
+    }
+}

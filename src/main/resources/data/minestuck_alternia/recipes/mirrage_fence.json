@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minestuck_alternia:mirrage_planks"
+    }
+  },
+  "result": {
+    "item": "minestuck_alternia:mirrage_fence",
+    "count": 3
+  }
+}

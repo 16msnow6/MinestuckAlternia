@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "minestuck_alternia:mirrage_log"
+    }
+  ],
+  "result": {
+    "item": "minestuck_alternia:mirrage_planks",
+    "count": 4
+  }
+}

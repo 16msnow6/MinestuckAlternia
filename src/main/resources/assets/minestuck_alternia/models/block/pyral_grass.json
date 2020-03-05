@@ -1,0 +1,6 @@
+{
+    "parent": "block/tinted_cross",
+    "textures": {
+        "cross": "minestuck_alternia:blocks/pyral_grass"
+    }
+}

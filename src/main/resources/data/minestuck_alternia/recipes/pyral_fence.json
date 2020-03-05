@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence",
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minestuck_alternia:pyral_planks"
+    }
+  },
+  "result": {
+    "item": "minestuck_alternia:pyral_fence",
+    "count": 3
+  }
+}

@@ -1,13 +1,19 @@
 package com.apocfarce.minestuck_alternia.world.biome;
 
+import com.apocfarce.minestuck_alternia.block.AlterniaBlocks;
+import com.apocfarce.minestuck_alternia.world.gen.feature.AlterniaFeatureHandeler;
+
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.GrassFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
@@ -34,7 +40,12 @@ public class AlterniaDeepForestBiome extends Biome {
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);
 	      DefaultBiomeFeatures.addSedimentDisks(this);
-	      addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR, new MultipleRandomFeatureConfig(new Feature[]{Feature.FANCY_TREE, Feature.MEGA_JUNGLE_TREE}, new IFeatureConfig[]{IFeatureConfig.NO_FEATURE_CONFIG,  IFeatureConfig.NO_FEATURE_CONFIG}, new float[]{0.05F, 0.33333334F}, Feature.JUNGLE_TREE, IFeatureConfig.NO_FEATURE_CONFIG), Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(10, 0.1F, 1)));
+	      
+	      
+	      addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR,new MultipleRandomFeatureConfig(new Feature[]{Feature.FANCY_TREE,AlterniaFeatureHandeler.PyralTreeFeature,AlterniaFeatureHandeler.PyralTreeLargeFeature}, new IFeatureConfig[]{IFeatureConfig.NO_FEATURE_CONFIG,IFeatureConfig.NO_FEATURE_CONFIG,IFeatureConfig.NO_FEATURE_CONFIG},new float[]{0.05F,0.34F,0.34F},AlterniaFeatureHandeler.PyralTreeFeature, IFeatureConfig.NO_FEATURE_CONFIG),Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(10, 0.1F, 1)));
+	      
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.GRASS, new GrassFeatureConfig(AlterniaBlocks.pyralGrass.getDefaultState()), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(1)));
+
 	      DefaultBiomeFeatures.addExtraDefaultFlowers(this);
 	      DefaultBiomeFeatures.addJungleGrass(this);
 	      DefaultBiomeFeatures.addMushrooms(this);

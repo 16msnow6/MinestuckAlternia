@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "minestuck_alternia:pyral_log"
+    }
+  ],
+  "result": {
+    "item": "minestuck_alternia:pyral_planks",
+    "count": 4
+  }
+}

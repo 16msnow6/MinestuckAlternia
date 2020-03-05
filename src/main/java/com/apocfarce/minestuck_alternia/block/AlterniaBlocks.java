@@ -3,11 +3,7 @@ package com.apocfarce.minestuck_alternia.block;
 import com.apocfarce.minestuck_alternia.Item.ENUM_BLOOD_COLOR;
 import com.google.common.collect.Maps;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.LogBlock;
-import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SoundType;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.AxeItem;
@@ -64,6 +60,8 @@ public class AlterniaBlocks
 	public static Block mirrageButton;
 	public static Block mirragePressurePlate;
 	
+	public static Block pyralGrass;
+	
 	//BloodColoredBlocks
 	public static Block hiveGlass[];
 	
@@ -98,13 +96,32 @@ public class AlterniaBlocks
 		pyralLog =  register(registry,"minestuck_alternia:pyral_log",  new AlterniaLogBlock(MaterialColor.BLUE,strippedPyralLog,Block.Properties.create(Material.WOOD,MaterialColor.BLUE).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
 		pyralWood =  register(registry,"minestuck_alternia:pyral_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
 		pyralPlanks =  register(registry,"minestuck_alternia:pyral_planks",  new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F,3.0F)));
+		pyralStairs = register(registry,"minestuck_alternia:pyral_stairs", new AlterniaStairs(pyralPlanks.getDefaultState(), Block.Properties.from(pyralPlanks)));
+		pyralSlab = register(registry,"minestuck_alternia:pyral_slab", new SlabBlock(Block.Properties.from(pyralPlanks)));
+		pyralFence = register(registry,"minestuck_alternia:pyral_fence", new FenceBlock(Block.Properties.from(pyralPlanks)));
+		pyralFenceGate = register(registry,"minestuck_alternia:pyral_fence_gate", new FenceGateBlock(Block.Properties.from(pyralPlanks)));
+/*		pyralDoor = register(registry,"minestuck_alternia:pyral_door", new)
+		pyralTrapDoor = register(registry,"minestuck_alternia:pyral_trap_door", new)
+		pyralSign = register(registry,"minestuck_alternia:pyral_sign", new)
+		pyralButton = register(registry,"minestuck_alternia:pyral_button", new)
+		pyralPressurePlate = register(registry,"minestuck_alternia:pyral_pressure_plate", new)*/
+		
+		
+		
 		
 		mirrageLeaves =  register(registry,"minestuck_alternia:mirrage_leaves",  new LeavesBlock(Block.Properties.create(Material.LEAVES).sound(SoundType.PLANT).hardnessAndResistance(0.2F).tickRandomly()));
-		strippedmirrageLog =  register(registry,"minestuck_alternia:stripped_mirrage_log",  new LogBlock(MaterialColor.BLUE,Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		strippedmirrageLog =  register(registry,"minestuck_alternia:stripped_mirrage_log",  new LogBlock(MaterialColor.BLACK,Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
 		strippedmirrageWood =  register(registry,"minestuck_alternia:stripped_mirrage_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
-		mirrageLog =  register(registry,"minestuck_alternia:mirrage_log",  new AlterniaLogBlock(MaterialColor.BLUE,strippedmirrageLog,Block.Properties.create(Material.WOOD,MaterialColor.BLUE).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
+		mirrageLog =  register(registry,"minestuck_alternia:mirrage_log",  new AlterniaLogBlock(MaterialColor.GRAY,strippedmirrageLog,Block.Properties.create(Material.WOOD,MaterialColor.BLUE).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
 		mirrageWood =  register(registry,"minestuck_alternia:mirrage_wood",  new RotatedPillarBlock(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F)));
 		mirragePlanks =  register(registry,"minestuck_alternia:mirrage_planks",  new Block(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(2.0F,3.0F)));
+		mirrageStairs = register(registry,"minestuck_alternia:mirrage_stairs", new AlterniaStairs(mirragePlanks.getDefaultState(), Block.Properties.from(mirragePlanks)));
+		mirrageSlab = register(registry,"minestuck_alternia:mirrage_slab", new SlabBlock(Block.Properties.from(mirragePlanks)));
+		mirrageFence = register(registry,"minestuck_alternia:mirrage_fence", new FenceBlock(Block.Properties.from(mirragePlanks)));
+		mirrageFenceGate = register(registry,"minestuck_alternia:mirrage_fence_gate", new FenceGateBlock(Block.Properties.from(mirragePlanks)));
+
+		
+		pyralGrass = register(registry,"minestuck_alternia:pyral_grass",new AlterniaTallGrass(Block.Properties.create(Material.TALL_PLANTS).sound(SoundType.PLANT).doesNotBlockMovement().hardnessAndResistance(0)));
 		
 		
 	}

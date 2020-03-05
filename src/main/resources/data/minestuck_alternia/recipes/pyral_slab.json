@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_slab",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minestuck_alternia:pyral_planks"
+    }
+  },
+  "result": {
+    "item": "minestuck_alternia:pyral_slab",
+    "count": 6
+  }
+}

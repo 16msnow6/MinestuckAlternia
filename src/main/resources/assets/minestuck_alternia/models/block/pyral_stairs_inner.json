@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "minestuck_alternia:blocks/pyral_planks",
+        "top": "minestuck_alternia:blocks/pyral_planks",
+        "side": "minestuck_alternia:blocks/pyral_planks"
+    }
+}

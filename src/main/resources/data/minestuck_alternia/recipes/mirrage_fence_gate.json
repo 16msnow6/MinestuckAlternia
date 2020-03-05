@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_fence_gate",
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minestuck_alternia:mirrage_planks"
+    }
+  },
+  "result": {
+    "item": "minestuck_alternia:mirrage_fence_gate"
+  }
+}

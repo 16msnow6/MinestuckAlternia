@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minestuck_alternia:pyral_planks"
+    }
+  },
+  "result": {
+    "item": "minestuck_alternia:pyral_stairs",
+    "count": 4
+  }
+}

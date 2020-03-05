@@ -13,7 +13,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -77,6 +76,10 @@ public class AlterniaItems
 		register(registry,AlterniaBlocks.strippedPyralLog,ItemGroupAlternia.instance);
 		register(registry,AlterniaBlocks.strippedPyralWood,ItemGroupAlternia.instance);
 		register(registry,AlterniaBlocks.pyralPlanks,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.pyralStairs,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.pyralSlab,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.pyralFence,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.pyralFenceGate,ItemGroupAlternia.instance);
 
 		register(registry,AlterniaBlocks.mirrageLeaves,ItemGroupAlternia.instance);
 		register(registry,AlterniaBlocks.mirrageLog,ItemGroupAlternia.instance);
@@ -84,6 +87,12 @@ public class AlterniaItems
 		register(registry,AlterniaBlocks.strippedmirrageLog,ItemGroupAlternia.instance);
 		register(registry,AlterniaBlocks.strippedmirrageWood,ItemGroupAlternia.instance);
 		register(registry,AlterniaBlocks.mirragePlanks,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.mirrageStairs,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.mirrageSlab,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.mirrageFence,ItemGroupAlternia.instance);
+		register(registry,AlterniaBlocks.mirrageFenceGate,ItemGroupAlternia.instance);
+		
+		register(registry,AlterniaBlocks.pyralGrass,ItemGroupAlternia.instance);
 		
 		
 		register(registry,new PortalCenterItem(AlterniaBlocks.portalCenter, new Item.Properties().group(ItemGroupAlternia.instance)));

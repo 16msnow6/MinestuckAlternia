@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_post",
+    "textures": {
+        "texture": "minestuck_alternia:blocks/pyral_planks"
+    }
+}
