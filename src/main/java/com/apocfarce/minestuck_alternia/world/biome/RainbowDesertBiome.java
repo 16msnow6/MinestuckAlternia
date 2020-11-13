@@ -5,22 +5,25 @@ import java.util.List;
 
 import com.apocfarce.minestuck_alternia.block.AlterniaBlocks;
 import com.apocfarce.minestuck_alternia.world.gen.feature.AlterniaFeatureHandeler;
+import com.apocfarce.minestuck_alternia.world.gen.feature.AlterniaFillerBlockTypes;
 import com.apocfarce.minestuck_alternia.world.gen.surfacebuilder.SurfaceBuilderHandeler;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.block.pattern.BlockMatcher;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.ConfiguredRandomFeatureList;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.GrassFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
+import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
@@ -52,12 +55,19 @@ public class RainbowDesertBiome extends Biome {
 
 		this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR, new MultipleRandomFeatureConfig(biomeHives, new ConfiguredFeature<NoFeatureConfig>(AlterniaFeatureHandeler.indigoHiveFeature1, IFeatureConfig.NO_FEATURE_CONFIG)),Placement.CHANCE_HEIGHTMAP, new ChanceConfig(50)));
 
+		//this.addFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, Blocks.DIRT.getDefaultState(), 33), Placement.COUNT_RANGE, new CountRangeConfig(10, 0, 0, 256)));
+	      
+		this.addFeature(Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(AlterniaFillerBlockTypes.AlterniaNaturalStone, AlterniaBlocks.redRock.getDefaultState(), 50), Placement.COUNT_RANGE, new CountRangeConfig(10,0,0,256)));
+	
 		
-		DefaultBiomeFeatures.addCarvers(this);
+		
+		
+	
+		AlterniaDefaultFeatures.addCarvers(this);
 		DefaultBiomeFeatures.addStructures(this);
 		DefaultBiomeFeatures.addMonsterRooms(this);
-		DefaultBiomeFeatures.addStoneVariants(this);
-		DefaultBiomeFeatures.addOres(this);
+		AlterniaDefaultFeatures.addStoneVariants(this);
+		AlterniaDefaultFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		
 	      

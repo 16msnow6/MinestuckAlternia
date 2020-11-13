@@ -58,24 +58,25 @@ public class PyralWoodsBiome extends Biome {
 		this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR, new MultipleRandomFeatureConfig(biomeHives, new ConfiguredFeature<NoFeatureConfig>(AlterniaFeatureHandeler.jadeHiveFeature1, IFeatureConfig.NO_FEATURE_CONFIG)),Placement.CHANCE_HEIGHTMAP, new ChanceConfig(100)));
 
 		
-	      DefaultBiomeFeatures.addCarvers(this);
-	      DefaultBiomeFeatures.addStructures(this);
-	      DefaultBiomeFeatures.addLakes(this);
-	      DefaultBiomeFeatures.addMonsterRooms(this);
-	      DefaultBiomeFeatures.addStoneVariants(this);
-	      DefaultBiomeFeatures.addOres(this);
-	      DefaultBiomeFeatures.addSedimentDisks(this);
-	      
-	      
-	      addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR,new MultipleRandomFeatureConfig(new Feature[]{Feature.FANCY_TREE,AlterniaFeatureHandeler.pyralTreeFeature,AlterniaFeatureHandeler.pyralTreeLargeFeature}, new IFeatureConfig[]{IFeatureConfig.NO_FEATURE_CONFIG,IFeatureConfig.NO_FEATURE_CONFIG,IFeatureConfig.NO_FEATURE_CONFIG},new float[]{0.05F,0.34F,0.34F},AlterniaFeatureHandeler.pyralTreeFeature, IFeatureConfig.NO_FEATURE_CONFIG),Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(10, 0.1F, 1)));
-	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.GRASS, new GrassFeatureConfig(AlterniaBlocks.pyralGrass.getDefaultState()), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(1)));
-
-	      DefaultBiomeFeatures.addExtraDefaultFlowers(this);
-	      DefaultBiomeFeatures.addJungleGrass(this);
-	      DefaultBiomeFeatures.addMushrooms(this);
-	      DefaultBiomeFeatures.addSprings(this);
-	      DefaultBiomeFeatures.addFreezeTopLayer(this);
+		AlterniaDefaultFeatures.addCarvers(this);
+		AlterniaDefaultFeatures.addStoneVariants(this);
+		AlterniaDefaultFeatures.addOres(this);
 		
+		DefaultBiomeFeatures.addStructures(this);
+		DefaultBiomeFeatures.addLakes(this);
+		DefaultBiomeFeatures.addMonsterRooms(this);
+		DefaultBiomeFeatures.addSedimentDisks(this);
+	      
+	      
+		addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR,new MultipleRandomFeatureConfig(new Feature[]{Feature.FANCY_TREE,AlterniaFeatureHandeler.pyralTreeFeature,AlterniaFeatureHandeler.pyralTreeLargeFeature}, new IFeatureConfig[]{IFeatureConfig.NO_FEATURE_CONFIG,IFeatureConfig.NO_FEATURE_CONFIG,IFeatureConfig.NO_FEATURE_CONFIG},new float[]{0.05F,0.34F,0.34F},AlterniaFeatureHandeler.pyralTreeFeature, IFeatureConfig.NO_FEATURE_CONFIG),Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(10, 0.1F, 1)));
+		this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(Feature.GRASS, new GrassFeatureConfig(AlterniaBlocks.pyralGrass.getDefaultState()), Placement.COUNT_HEIGHTMAP, new FrequencyConfig(1)));
+		
+		DefaultBiomeFeatures.addExtraDefaultFlowers(this);
+		DefaultBiomeFeatures.addJungleGrass(this);
+		DefaultBiomeFeatures.addMushrooms(this);
+		DefaultBiomeFeatures.addSprings(this);
+		DefaultBiomeFeatures.addFreezeTopLayer(this);
+			
 
 		
 	}

@@ -25,7 +25,13 @@ public class AlterniaBiomeHandeler {
 		pyralForest = register(registry,new ResourceLocation("minestuck_alternia:pyral_forest"), new PyralWoodsBiome(),BiomeType.WARM,10);
 		AlterniaPlains = register(registry,new ResourceLocation("minestuck_alternia:alternia_plains"), new AlterniaPlains(),BiomeType.COOL,30);
 		mixedForest = register(registry,new ResourceLocation("minestuck_alternia:mixed_forest"), new MixedWoodsBiome(),BiomeType.WARM,10);
+		
 		ColoredDesert = register(registry,new ResourceLocation("minestuck_alternia:colored_desert"), new RainbowDesertBiome(),BiomeType.DESERT,40);
+		//coarseDesert
+		//
+		//volcanicWastes
+		//redMountians
+		
 	}
 	public static Biome registerEdgeBiome(IForgeRegistry<Biome> registry,ResourceLocation name,Biome biome,Biome parent) {
 		biome.setRegistryName(name);

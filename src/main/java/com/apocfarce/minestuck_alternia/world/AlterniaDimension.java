@@ -4,6 +4,7 @@ import java.util.function.BiFunction;
 
 import javax.annotation.Nullable;
 
+import com.apocfarce.minestuck_alternia.block.AlterniaBlocks;
 import com.apocfarce.minestuck_alternia.world.biome.provider.AlterniaBioimeProviderHandeler;
 import com.apocfarce.minestuck_alternia.world.biome.provider.AlterniaBiomeProvider;
 import com.apocfarce.minestuck_alternia.world.biome.provider.AlterniaBiomeProviderSettings;
@@ -52,6 +53,7 @@ public class AlterniaDimension extends Dimension {
 		
 	      
 		AlterniaGenSettings alterniagensettings = alterniaChunkGenerator.createSettings();
+		alterniagensettings.setDefaultBlock(AlterniaBlocks.darkStone.getDefaultState());;
         AlterniaBiomeProviderSettings alterniabiomeprovidersettings = biomeprovidertype.createSettings().setWorldInfo(this.world.getWorldInfo()).setGeneratorSettings(alterniagensettings);
 		return alterniaChunkGenerator.create(this.world, biomeprovidertype.create(alterniabiomeprovidersettings), alterniagensettings);
 	   

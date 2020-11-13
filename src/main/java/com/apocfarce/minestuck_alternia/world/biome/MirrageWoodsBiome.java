@@ -61,12 +61,12 @@ public class MirrageWoodsBiome extends Biome {
 		this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR, new MultipleRandomFeatureConfig(biomeHives, new ConfiguredFeature<NoFeatureConfig>(AlterniaFeatureHandeler.mutantHiveFeature1, IFeatureConfig.NO_FEATURE_CONFIG)),Placement.CHANCE_HEIGHTMAP, new ChanceConfig(50)));
 
 		
-		DefaultBiomeFeatures.addCarvers(this);
+		AlterniaDefaultFeatures.addCarvers(this);
 		DefaultBiomeFeatures.addStructures(this);
 		DefaultBiomeFeatures.addLakes(this);
 		DefaultBiomeFeatures.addMonsterRooms(this);
-		DefaultBiomeFeatures.addStoneVariants(this);
-		DefaultBiomeFeatures.addOres(this);
+		AlterniaDefaultFeatures.addStoneVariants(this);
+		AlterniaDefaultFeatures.addOres(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
 		
 		

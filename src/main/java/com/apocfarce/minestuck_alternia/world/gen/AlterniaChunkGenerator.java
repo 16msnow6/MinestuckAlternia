@@ -55,7 +55,7 @@ public class AlterniaChunkGenerator extends NoiseChunkGenerator<AlterniaGenSetti
       WorldEntitySpawner.performWorldGenSpawning(region, biome, i, j, sharedseedrandom);
    }
 
-   protected void func_222548_a(double[] p_222548_1_, int p_222548_2_, int p_222548_3_) {
+   protected void fillNoiseColumn(double[] p_222548_1_, int p_222548_2_, int p_222548_3_) {
       double d0 = (double)684.412F;
       double d1 = (double)684.412F;
       double d2 = 8.555149841308594D;
@@ -75,17 +75,17 @@ public class AlterniaChunkGenerator extends NoiseChunkGenerator<AlterniaGenSetti
       return d1;
    }
 
-   protected double[] func_222549_a(int p_222549_1_, int p_222549_2_) {
+   protected double[] getBiomeNoiseColumn(int p_222549_1_, int p_222549_2_) {
       double[] adouble = new double[2];
       float f = 0.0F;
       float f1 = 0.0F;
       float f2 = 0.0F;
       int i = 2;
-      float f3 = this.biomeProvider.func_222366_b(p_222549_1_, p_222549_2_).getDepth();
+      float f3 = this.biomeProvider.getBiomeAtFactorFour(p_222549_1_, p_222549_2_).getDepth();
 
       for(int j = -2; j <= 2; ++j) {
          for(int k = -2; k <= 2; ++k) {
-            Biome biome = this.biomeProvider.func_222366_b(p_222549_1_ + j, p_222549_2_ + k);
+            Biome biome = this.biomeProvider.getBiomeAtFactorFour(p_222549_1_ + j, p_222549_2_ + k);
             float f4 = biome.getDepth();
             float f5 = biome.getScale();
             if (this.field_222577_j && f4 > 0.0F) {
@@ -114,7 +114,7 @@ public class AlterniaChunkGenerator extends NoiseChunkGenerator<AlterniaGenSetti
    }
 
    private double func_222574_c(int p_222574_1_, int p_222574_2_) {
-      double d0 = this.depthNoise.func_215462_a((double)(p_222574_1_ * 200), 10.0D, (double)(p_222574_2_ * 200), 1.0D, 0.0D, true) / 8000.0D;
+      double d0 = this.depthNoise.getValue((double)(p_222574_1_ * 200), 10.0D, (double)(p_222574_2_ * 200), 1.0D, 0.0D, true) / 8000.0D;
       if (d0 < 0.0D) {
          d0 = -d0 * 0.3D;
       }
@@ -170,4 +170,9 @@ public class AlterniaChunkGenerator extends NoiseChunkGenerator<AlterniaGenSetti
    public int getSeaLevel() {
       return 63;
    }
+   
+   
+   
+
+
 }

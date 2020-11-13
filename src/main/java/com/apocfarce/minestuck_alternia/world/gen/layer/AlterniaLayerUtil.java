@@ -27,11 +27,12 @@ public class AlterniaLayerUtil extends LayerUtil {
 		IAreaFactory<T> iareafactory = AlterniaSeedLayer.INSTANCE.apply(contextFactory.apply(1L));
 		//add heat map
 		iareafactory = AddSnowLayer.INSTANCE.apply(contextFactory.apply(2L), iareafactory);
+		//
+		iareafactory = WarmWorldLayer.INSTANCE.apply(contextFactory.apply(2L), iareafactory);
+		//
 		iareafactory = EdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), iareafactory);
 		iareafactory = EdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), iareafactory);
 
-		
-    
       
 		//add biomes
 		iareafactory = (new AlterniaBiomeLayer(worldTypeIn, settings)).apply(contextFactory.apply(200L), iareafactory);

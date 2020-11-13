@@ -58,21 +58,22 @@ public final class AlterniaPlains extends Biome {
 		
 		this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Biome.createDecoratedFeature(Feature.RANDOM_SELECTOR, new MultipleRandomFeatureConfig(biomeHives, new ConfiguredFeature<NoFeatureConfig>(AlterniaFeatureHandeler.burgundyHiveFeature3, IFeatureConfig.NO_FEATURE_CONFIG)),Placement.CHANCE_HEIGHTMAP, new ChanceConfig(50)));
 
-		DefaultBiomeFeatures.addCarvers(this);
+		AlterniaDefaultFeatures.addCarvers(this);
+		AlterniaDefaultFeatures.addStoneVariants(this);
+		AlterniaDefaultFeatures.addOres(this);
+		
 		DefaultBiomeFeatures.addStructures(this);
 		DefaultBiomeFeatures.addLakes(this);
 		DefaultBiomeFeatures.addMonsterRooms(this);
 		DefaultBiomeFeatures.func_222283_Y(this);
-		DefaultBiomeFeatures.addStoneVariants(this);
-		DefaultBiomeFeatures.addOres(this);
+		
 		DefaultBiomeFeatures.addSedimentDisks(this);
-		DefaultBiomeFeatures.func_222299_R(this);
+		DefaultBiomeFeatures.addOakTreesFlowersGrass(this);
 		DefaultBiomeFeatures.addMushrooms(this);
 		DefaultBiomeFeatures.addReedsAndPumpkins(this);
 		DefaultBiomeFeatures.addSprings(this);
 		DefaultBiomeFeatures.addFreezeTopLayer(this);
 		
-
 	}
 	@Override
 	public int getFoliageColor(BlockPos pos) {

@@ -46,10 +46,10 @@ public class AlterniaBiomeProvider extends BiomeProvider {
 	}
    
 	public static void AddVanillaBiomes(){
-//		biomes[BiomeType.WARM.ordinal()].add(new BiomeEntry(Biomes.BAMBOO_JUNGLE,10));
-//		biomes[BiomeType.COOL.ordinal()].add(new BiomeEntry(Biomes.SWAMP,10));
 		biomes[BiomeType.ICY.ordinal()].add(new BiomeEntry(Biomes.ICE_SPIKES,10));
-		biomes[BiomeType.DESERT.ordinal()].add(new BiomeEntry(Biomes.BADLANDS,10));
+		biomes[BiomeType.DESERT.ordinal()].add(new BiomeEntry(Biomes.BADLANDS,20));
+		biomes[BiomeType.DESERT.ordinal()].add(new BiomeEntry(Biomes.DESERT, 20));
+		biomes[BiomeType.DESERT.ordinal()].add(new BiomeEntry(Biomes.DESERT_HILLS, 10));
 	}	
 	public static void AddBiome(Biome biome,BiomeType type, int weight) {
 		biomes[type.ordinal()].add(new BiomeEntry(biome,weight));
@@ -121,7 +121,7 @@ public class AlterniaBiomeProvider extends BiomeProvider {
 
    public boolean hasStructure(Structure<?> structureIn) {
       return this.hasStructureCache.computeIfAbsent(structureIn, (p_205006_1_) -> {
-         for(List<BiomeEntry> biomeList : this.biomes) {
+         for(List<BiomeEntry> biomeList : biomes) {
         	 for(BiomeEntry biome:biomeList) {
         		 if(biome.biome.hasStructure(p_205006_1_)) {
         			 return true;
@@ -134,7 +134,7 @@ public class AlterniaBiomeProvider extends BiomeProvider {
 
    public Set<BlockState> getSurfaceBlocks() {
       if (this.topBlocksCache.isEmpty()) {
-    	  for(List<BiomeEntry> biomeList : this.biomes) {
+    	  for(List<BiomeEntry> biomeList : biomes) {
     		  for(BiomeEntry biome:biomeList) {
     			  this.topBlocksCache.add(biome.biome.getSurfaceBuilderConfig().getTop());
     		  }

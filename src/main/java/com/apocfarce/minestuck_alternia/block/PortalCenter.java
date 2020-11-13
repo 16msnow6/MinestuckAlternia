@@ -150,7 +150,8 @@ public class PortalCenter extends Portal{
 		}
 	}
 	public static void teliport(ServerWorld from, ServerWorld to, BlockPos spawnPos,ServerPlayerEntity player) {
-		from.getChunkProvider().func_217228_a(TicketType.POST_TELEPORT, new ChunkPos(spawnPos), 1, player.getEntityId());
+		from.getChunkProvider().releaseTicket(TicketType.POST_TELEPORT, new ChunkPos(spawnPos), 1, player.getEntityId());
+		
 		while(to.isAirBlock(spawnPos)){
 			spawnPos=spawnPos.down();
 		}

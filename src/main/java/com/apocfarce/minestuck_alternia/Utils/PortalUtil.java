@@ -24,7 +24,7 @@ public class PortalUtil
 			ServerPlayerEntity player = (ServerPlayerEntity) entity;
 			
 			ChunkPos chunkpos = new ChunkPos(new BlockPos(x, y, z));
-			world.getChunkProvider().func_217228_a(TicketType.POST_TELEPORT, chunkpos, 1, player.getEntityId());
+			world.getChunkProvider().registerTicket(TicketType.POST_TELEPORT, chunkpos, 1, player.getEntityId());
 			player.stopRiding();
 			if(player.isSleeping())
 			{
