@@ -1,6 +1,8 @@
 package com.apocfarce.minestuck_alternia.world.gen.surfacebuilder;
 
 import com.mojang.datafixers.Dynamic;
+
+import biomesoplenty.api.block.BOPBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -51,6 +53,7 @@ public class ColoredSandsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCon
 			case 3:
 				return Blocks.PINK_CONCRETE_POWDER.getDefaultState();
 			case 1:
+				return BOPBlocks.ash_block.getDefaultState();
 			case 4:
 				return Blocks.CYAN_CONCRETE_POWDER.getDefaultState();
 			default:

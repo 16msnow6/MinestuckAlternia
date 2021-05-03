@@ -34,21 +34,9 @@ This mod alows the player to explore the great world of alternia, meet trolls, h
 This mod is not Minestuck, nor a minestuck addon,instead, this mod is for adding the alternia world
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.minestuck_alternia]] #optional
-    # the modid of the dependency
-    modId="forge" #mandatory
-    # Does this dependency have to exist - if not, ordering below must be specified
-    mandatory=true #mandatory
-    # The version range of the dependency
-    versionRange="[31,)" #mandatory
-    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
-    ordering="NONE"
-    # Side this dependency is applied on - BOTH, CLIENT or SERVER
-    side="BOTH"
-# Here's another dependency
 [[dependencies.minestuck_alternia]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.15.2]"
+    modId="biomesoplenty"
+    mandatory=false
+    versionRange="[1.15.2-10.0.0.366]"
     ordering="NONE"
     side="BOTH"
