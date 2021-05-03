@@ -53,7 +53,6 @@ public class ColoredSandsSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCon
 			case 3:
 				return Blocks.PINK_CONCRETE_POWDER.getDefaultState();
 			case 1:
-				return BOPBlocks.ash_block.getDefaultState();
 			case 4:
 				return Blocks.CYAN_CONCRETE_POWDER.getDefaultState();
 			default:
