@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "minestuck_alternia:burgundy_hive_glass",
+    "minestuck_alternia:bronze_hive_glass",
+    "minestuck_alternia:gold_hive_glass",
+    "minestuck_alternia:olive_hive_glass",
+    "minestuck_alternia:jade_hive_glass",
+    "minestuck_alternia:teal_hive_glass",
+    "minestuck_alternia:cerulean_hive_glass",
+    "minestuck_alternia:indigo_hive_glass",
+    "minestuck_alternia:purple_hive_glass",
+    "minestuck_alternia:violet_hive_glass",
+    "minestuck_alternia:fuchsia_hive_glass",
+    "minestuck_alternia:lime_hive_glass",
+    "minestuck_alternia:grey_hive_glass"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minestuck_alternia:pyral_log",
+    "minestuck_alternia:pyral_wood",
+    "minestuck_alternia:stripped_pyral_log",
+    "minestuck_alternia:stripped_pyral_wood"
+  ]
+}
