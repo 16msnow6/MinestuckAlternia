@@ -25,8 +25,9 @@ public class AlterniaBiomeProvider extends BiomeProvider {
 	}
 	
 	public static void initBiomeList() {
-		addVanilla(Biomes.BADLANDS, BiomeType.DESERT, 10);
-		addVanilla(Biomes.DESERT,BiomeType.DESERT, 20);
+		//removed as they add overworld features i dont want
+		//addVanilla(Biomes.BADLANDS, BiomeType.DESERT, 10);
+		//addVanilla(Biomes.DESERT,BiomeType.DESERT, 20);
 		
 		addBiome(AlterniaBiomes.MIRRAGE_FOREST.get(), BiomeType.COOL, 10);
 		addBiome(AlterniaBiomes.PYRAL_FOREST.get(), BiomeType.COOL, 10);

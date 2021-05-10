@@ -38,7 +38,7 @@ public class EventListener {
 				AlterniaPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), new ShouldDoSelectionPacket());
 			} else PlayerDataHelper.setSelectedDimension(player, false);
 		}else {
-			player.canUpdate(false);
+			player.canUpdate(true);
 		}
 	}
 	
