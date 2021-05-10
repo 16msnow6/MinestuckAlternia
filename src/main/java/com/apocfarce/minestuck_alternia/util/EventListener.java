@@ -4,6 +4,8 @@ import com.apocfarce.minestuck_alternia.network.AlterniaPacketHandler;
 import com.apocfarce.minestuck_alternia.network.ShouldDoSelectionPacket;
 import com.apocfarce.minestuck_alternia.world.AlterniaDimensions;
 import com.apocfarce.minestuck_alternia.world.gen.feature.AlterniaFeatures;
+
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.gen.Heightmap;
@@ -25,14 +27,18 @@ public class EventListener {
 	
 	private static final Set<ServerPlayerEntity> playerInSelection = new HashSet<>();
 	
+
 	@SubscribeEvent
 	public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
 		ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
 		if(PlayerDataHelper.hasNotSelectedDimension(player)) {
 			if(mightBeFirstTimeLogin(player)) {
 				playerInSelection.add(player);
+				player.canUpdate(false);
 				AlterniaPacketHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), new ShouldDoSelectionPacket());
 			} else PlayerDataHelper.setSelectedDimension(player, false);
+		}else {
+			player.canUpdate(false);
 		}
 	}
 	
@@ -41,13 +47,17 @@ public class EventListener {
 		playerInSelection.clear();
 	}
 	
-	@SubscribeEvent
+/*	@SubscribeEvent
 	public static void onAdvancement(AdvancementEvent event) {
-		//Players should not be in selection if they're actually interacting with the game
-		// (it'd be better with a different hook that catches more cases,
-		// but this should catch all practical ways of abusing dimension selection)
-		playerInSelection.remove(event.getPlayer());
-	}
+		if(event.getAdvancement().getCriteria().values().contains(CriteriaTriggers.LOCATION)) {
+            //if(criteriaType=="minecraft:enter_block") {
+                //Players should not be in selection if they're actually interacting with the game
+                // (it'd be better with a different hook that catches more cases,
+                // but this should catch all practical ways of abusing dimension selection)
+                playerInSelection.remove(event.getPlayer());
+            //}
+        }	
+	}*/
 	
 	public static void handleDimensionSelection(ServerPlayerEntity player, boolean choseAlternia, BloodColor color) {
 		if(playerInSelection.contains(player)) {
@@ -72,6 +82,7 @@ public class EventListener {
 				} else LOGGER.error("Couldn't teleport player to alternia. Got null world from the DimensionManager!");
 			}
 		}
+		player.canUpdate(true);
 	}
 	
 	private static boolean mightBeFirstTimeLogin(ServerPlayerEntity player) {
