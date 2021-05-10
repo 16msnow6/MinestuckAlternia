@@ -1,8 +1,6 @@
 package com.apocfarce.minestuck_alternia.world.gen.surfacebuilder;
 
 import com.mojang.datafixers.Dynamic;
-
-import biomesoplenty.api.block.BOPBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
